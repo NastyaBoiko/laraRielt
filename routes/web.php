@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\MyPlaceController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MyPlaceController;
+use App\Http\Controllers\BuildingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return 'aaaaa';
-});
-
 Route::get('/my_page', [MyPlaceController::class, 'index']);
-//Route::get('/my_page', 'App\Http\Controllers\MyPlaceController@index'); можно так
+
+Route::get('/buildings', [BuildingController::class, 'index'])->name('buildings.index');
 
 
