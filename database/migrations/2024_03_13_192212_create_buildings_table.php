@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('buildings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
             $table->string('district');
             $table->string('address');
-            $table->string('class');
-            $table->string('image');
             $table->timestamps();
+
+            $table->softDeletes();
         });
     }
 

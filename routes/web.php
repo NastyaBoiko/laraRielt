@@ -17,6 +17,12 @@ use App\Http\Controllers\BuildingController;
 
 Route::get('/my_page', [MyPlaceController::class, 'index']);
 
-Route::get('/buildings', [BuildingController::class, 'index'])->name('buildings.index');
+Route::get('/buildings', [BuildingController::class, 'index'])->name('building.index');
+Route::get('/buildings/create', [BuildingController::class, 'create'])->name('building.create');
+Route::post('/buildings/store', [BuildingController::class, 'store'])->name('building.store');
+Route::get('/buildings/{building}', [BuildingController::class, 'show'])->name('building.show');
+Route::get('/buildings/{building}/edit', [BuildingController::class, 'edit'])->name('building.edit');
+Route::patch('/buildings/{building}', [BuildingController::class, 'update'])->name('building.update');
+Route::delete('/buildings/{building}', [BuildingController::class, 'destroy'])->name('building.delete');
 
 
